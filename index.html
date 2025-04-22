@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,9 @@
       margin: 0;
       padding: 0;
     }
-    html, body {
+
+    html,
+    body {
       height: 100%;
       font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -19,25 +22,29 @@
       background: linear-gradient(to right, #f9fafb, #eef1f4);
       color: #2c3e50;
     }
+
     body {
       display: flex;
       justify-content: center;
       align-items: flex-start;
       padding: 20px;
     }
+
     main {
       max-width: 1000px;
       width: 100%;
       background-color: #fff;
       padding: 40px 20px;
       border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
       transition: all 0.3s ease-in-out;
     }
+
     header {
       text-align: center;
       margin-bottom: 40px;
     }
+
     header h1 {
       font-size: 2.2rem;
       margin-bottom: 16px;
@@ -45,12 +52,14 @@
       line-height: 1.2;
       word-wrap: break-word;
     }
+
     header p {
       font-size: 1rem;
       color: #555;
       margin-bottom: 8px;
       line-height: 1.5;
     }
+
     .highlight {
       background-color: #007BFF;
       color: white;
@@ -65,9 +74,10 @@
       padding: 20px;
       border-radius: 10px;
       background-color: #ffffff;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease-in-out;
     }
+
     .month h2 {
       font-size: 1.5rem;
       margin-bottom: 20px;
@@ -77,12 +87,15 @@
       background: linear-gradient(135deg, #6fb1fc, #4364f7);
       color: white;
     }
+
     .month.april h2 {
       background: linear-gradient(135deg, #007BFF, #0056b3);
     }
+
     .month.may h2 {
       background: linear-gradient(135deg, #28A745, #1c7c31);
     }
+
     .month.june h2 {
       background: linear-gradient(135deg, #FFC107, #ff9800);
       color: #000;
@@ -103,10 +116,12 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     }
+
     .week:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
+
     .week h3 {
       margin-bottom: 10px;
       font-size: 1.1rem;
@@ -130,15 +145,24 @@
 
     /* Animation keyframes for glowing border */
     @keyframes pulseGlow {
-      0% { box-shadow: 0 0 0 0 rgba(255, 87, 51, 0.4); }
-      70% { box-shadow: 0 0 10px 10px rgba(255, 87, 51, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(255, 87, 51, 0); }
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 87, 51, 0.4);
+      }
+
+      70% {
+        box-shadow: 0 0 10px 10px rgba(255, 87, 51, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 87, 51, 0);
+      }
     }
 
     ul {
       padding-left: 18px;
       line-height: 1.6;
     }
+
     li::marker {
       color: #007BFF;
     }
@@ -164,38 +188,48 @@
       font-size: 1rem;
       transition: background-color 0.3s ease;
     }
+
     button.export:hover {
       background-color: #0056b3;
     }
 
     /* Responsive design for mobile devices */
     @media screen and (max-width: 600px) {
-      html, body {
+
+      html,
+      body {
         padding: 0;
         margin: 0;
         width: 100vw;
       }
+
       body {
         align-items: stretch;
       }
+
       main {
         border-radius: 0;
         padding: 20px 10px;
         box-shadow: none;
         width: 100vw;
       }
+
       header h1 {
         font-size: 1.6rem;
       }
+
       header p {
         font-size: 0.95rem;
       }
+
       .week h3 {
         font-size: 1rem;
       }
+
       .month h2 {
         font-size: 1.2rem;
       }
+
       button.export {
         width: 100%;
       }
@@ -208,22 +242,28 @@
         padding: 0;
         display: block;
       }
+
       main {
         padding: 20px;
         box-shadow: none;
         border-radius: 0;
       }
-      button.export { display: none; }
+
+      button.export {
+        display: none;
+      }
     }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <main>
     <header>
       <h1>BOOTCAMP 1.0 - Trading Calendar</h1>
       <p>A structured program designed to develop trading mastery through weekly lessons and practical applications.</p>
-      <p><span class="highlight">Routine:</span> Tape Reading at <strong>2:00 PM</strong> and Live Lessons at <strong>9:30 PM</strong> <em>(Moroccan Time)</em></p>
+      <p><span class="highlight">Routine:</span> Typically Tape Reading at <strong>2:00 PM</strong> and Live Lessons at
+        <strong>9:30 PM</strong> <em>(Moroccan Time)</em></p>
     </header>
     <section class="month april">
       <h2>April</h2>
@@ -340,26 +380,34 @@
         </div>
       </div>
     </section>
+    <button class="export" onclick="window.print()">Export as PDF</button>
+    <footer>
+      &copy; 2025 Phostrade Academy | All rights reserved
+    </footer>
     <script>
-      // Adjusted start date to April 7
-      const today = new Date();
-      const aprilStart = new Date('2025-04-07');
-      const daysSinceStart = Math.floor((today - aprilStart) / (1000 * 60 * 60 * 24));
-      const currentWeek = Math.ceil((daysSinceStart + 1) / 7);
-      const weekElems = document.querySelectorAll('.month.april .week');
+      // Ensure the DOM is fully loaded before executing the script
+      document.addEventListener("DOMContentLoaded", function () {
+        // Adjusted start date to April 7
+        const today = new Date();
+        const aprilStart = new Date('2025-04-07');
+        const daysSinceStart = Math.floor((today - aprilStart) / (1000 * 60 * 60 * 24));
+        const currentWeek = Math.ceil((daysSinceStart + 1) / 7);
+        const weekElems = document.querySelectorAll('.month.april .week');
 
-      // Log values for debugging
-      console.log('Today:', today);
-      console.log('Start Date:', aprilStart);
-      console.log('Days since start:', daysSinceStart);
-      console.log('Calculated current week:', currentWeek);
-      console.log('Total April weeks:', weekElems.length);
+        // Log values for debugging
+        console.log('Today:', today);
+        console.log('Start Date:', aprilStart);
+        console.log('Days since start:', daysSinceStart);
+        console.log('Calculated current week:', currentWeek);
+        console.log('Total April weeks:', weekElems.length);
 
-      // Highlight the current week if within range
-      if (currentWeek >= 1 && currentWeek <= weekElems.length) {
-        weekElems[currentWeek - 1].classList.add('current');
-      }
+        // Highlight the current week if within range
+        if (currentWeek >= 1 && currentWeek <= weekElems.length) {
+          weekElems[currentWeek - 1].classList.add('current');
+        }
+      });
     </script>
   </main>
 </body>
+
 </html>
