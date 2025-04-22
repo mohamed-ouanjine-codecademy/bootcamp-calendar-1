@@ -68,18 +68,10 @@
       border-radius: 8px;
       display: inline-block;
     }
-    .month.april h2 {
-      background-color: #007BFF;
-      color: white;
-    }
-    .month.may h2 {
-      background-color: #28A745;
-      color: white;
-    }
-    .month.june h2 {
-      background-color: #FFC107;
-      color: #000;
-    }
+    .month.april h2 { background-color: #007BFF; color: white; }
+    .month.may h2 { background-color: #28A745; color: white; }
+    .month.june h2 { background-color: #FFC107; color: #000; }
+
     .weeks-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -103,6 +95,10 @@
       border-bottom: 2px solid #007BFF;
       padding-bottom: 5px;
     }
+    .week.current {
+      border: 2px solid #ff5733;
+      background-color: #fff3e6;
+    }
     ul {
       padding-left: 18px;
       line-height: 1.6;
@@ -115,6 +111,20 @@
       margin-top: 60px;
       font-size: 0.9rem;
       color: #888;
+    }
+    button.export {
+      margin: 20px auto;
+      display: block;
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button.export:hover {
+      background-color: #0056b3;
     }
 
     @media screen and (max-width: 600px) {
@@ -146,6 +156,7 @@
         box-shadow: none;
         border-radius: 0;
       }
+      button.export { display: none; }
     }
   </style>
 </head>
@@ -273,9 +284,23 @@
       </div>
     </section>
 
+    <button class="export" onclick="window.print()">Export as PDF</button>
+
     <footer>
       &copy; 2025 Phostrade Academy | All rights reserved
     </footer>
   </main>
+
+  <script>
+    // Adjusted start date to April 7
+    const today = new Date();
+    const aprilStart = new Date('2025-04-07');
+    const daysSinceStart = Math.floor((today - aprilStart) / (1000 * 60 * 60 * 24));
+    const currentWeek = Math.ceil((daysSinceStart + 1) / 7);
+    const weekElems = document.querySelectorAll('.month.april .week');
+    if (currentWeek >= 1 && currentWeek <= weekElems.length) {
+      weekElems[currentWeek - 1].classList.add('current');
+    }
+  </script>
 </body>
 </html>
