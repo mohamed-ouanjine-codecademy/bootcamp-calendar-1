@@ -130,6 +130,8 @@
     @media screen and (max-width: 600px) {
       html, body {
         padding: 0;
+        margin: 0;
+        width: 100vw;
       }
       body {
         align-items: stretch;
@@ -138,6 +140,7 @@
         border-radius: 0;
         padding: 20px 10px;
         box-shadow: none;
+        width: 100vw;
       }
       header h1 {
         font-size: 1.6rem;
@@ -300,15 +303,31 @@
   </main>
 
   <script>
-    // Adjusted start date to April 7
     const today = new Date();
-    const aprilStart = new Date('2025-04-07');
-    const daysSinceStart = Math.floor((today - aprilStart) / (1000 * 60 * 60 * 24));
-    const currentWeek = Math.ceil((daysSinceStart + 1) / 7);
-    const weekElems = document.querySelectorAll('.month.april .week');
-    if (currentWeek >= 1 && currentWeek <= weekElems.length) {
-      weekElems[currentWeek - 1].classList.add('current');
-    }
+    const startDate = new Date('2025-04-07');
+    const months = document.querySelectorAll('.month');
+
+    let weekCounter = 0;
+
+    months.forEach(month => {
+      const weekDivs = month.querySelectorAll('.week');
+
+      weekDivs.forEach((week) => {
+        const weekStart = new Date(startDate);
+        weekStart.setDate(startDate.getDate() + weekCounter * 7);
+
+        const weekEnd = new Date(weekStart);
+        weekEnd.setDate(weekStart.getDate() + 6);
+
+        const isSameMonth = weekStart.getMonth() === today.getMonth();
+
+        if (today >= weekStart && today <= weekEnd && isSameMonth) {
+          week.classList.add('current');
+        }
+
+        weekCounter++;
+      });
+    });
   </script>
 </body>
 </html>
