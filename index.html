@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BOOTCAMP 1.0 - Trading Calendar</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f9fafb, #eef1f4);
+      color: #2c3e50;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    main {
+      max-width: 1000px;
+      width: 100%;
+      background-color: #fff;
+      padding: 40px 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+      line-height: 1.2;
+      word-wrap: break-word;
+    }
+    header p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .highlight {
+      background-color: #007BFF;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .month {
+      margin-bottom: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .month h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: inline-block;
+    }
+    .month.april h2 {
+      background-color: #007BFF;
+      color: white;
+    }
+    .month.may h2 {
+      background-color: #28A745;
+      color: white;
+    }
+    .month.june h2 {
+      background-color: #FFC107;
+      color: #000;
+    }
+    .weeks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .week {
+      background-color: #f4f6f8;
+      border-radius: 8px;
+      padding: 15px 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .week:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    .week h3 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: #34495e;
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 5px;
+    }
+    ul {
+      padding-left: 18px;
+      line-height: 1.6;
+    }
+    li::marker {
+      color: #007BFF;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      header p {
+        font-size: 0.95rem;
+      }
+      .week h3 {
+        font-size: 1rem;
+      }
+      .month h2 {
+        font-size: 1.2rem;
+      }
+      main {
+        padding: 20px 10px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+        display: block;
+      }
+      main {
+        padding: 20px;
+        box-shadow: none;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>BOOTCAMP 1.0 - Trading Calendar</h1>
+      <p>A structured program to develop trading mastery through weekly lessons and applied concepts.</p>
+      <p><span class="highlight">Routine:</span> Tape Reading at 2:00 PM & Live Lessons at 9:30 PM (Moroccan Time)</p>
+    </header>
+
+    <section class="month april">
+      <h2>April</h2>
+      <div class="weeks-grid">
+        <div class="week">
+          <h3>Week 1</h3>
+          <ul>
+            <li>Tape Reading</li>
+            <li>Daily Outlook</li>
+            <li>Your New Approach to Trading</li>
+            <li>Understanding Trading Participants</li>
+            <li>What is the Time Function</li>
+            <li>The Equation of Time + Price = Future</li>
+          </ul>
+        </div>
+        <div class="week">
+          <h3>Week 2</h3>
+          <ul>
+            <li>Weekly Outlook</li>
+            <li>PREMIUM and Discount</li>
+            <li>Tape Reading</li>
+            <li>Daily Outlook</li>
+            <li>Deep Dive into Premium & Discount Function</li>
+            <li>Fair Value Price & Formation of Inefficiencies</li>
+          </ul>
+        </div>
+        <div class="week">
+          <h3>Week 3</h3>
+          <ul>
+            <li>Weekly Outlook</li>
+            <li>Tape Reading</li>
+            <li>Daily Outlook</li>
+            <li>Liquidity Function</li>
+            <li>The Formation of Swings</li>
+            <li>The Phostrade Concept Introduction</li>
+          </ul>
+        </div>
+        <div class="week">
+          <h3>Week 4</h3>
+          <ul>
+            <li>Weekly Outlook</li>
+            <li>Tape Reading</li>
+            <li>Daily Outlook</li>
+            <li>First Stage Function</li>
+            <li>First Stage and Blocks</li>
+            <li>Second Stage Function</li>
+            <li>How Stocks Affect the Market</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="month may">
+      <h2>May</h2>
+      <div class="weeks-grid">
+        <div class="week">
+          <h3>Week 1</h3>
+          <ul>
+            <li>Weekly Outlook</li>
+            <li>Tape Reading</li>
+            <li>Daily Outlook</li>
+            <li>Second Stage and Imbalances</li>
+            <li>Third Stage</li>
+            <li>Third Stage, Breakers & Mitigation</li>
+            <li>The Crack Code</li>
+          </ul>
+        </div>
+        <div class="week">
+          <h3>Week 2</h3>
+          <ul>
+            <li>Weekly Outlook</li>
+            <li>Tape Reading</li>
+            <li>Daily Outlook</li>
+            <li>Time Theory (3 Parts)</li>
+          </ul>
+        </div>
+        <div class="week">
+          <h3>Week 3</h3>
+          <ul>
+            <li>Weekly Outlook</li>
+            <li>Tape Reading</li>
+            <li>Daily Outlook</li>
+            <li>Volume Profile (2 Parts)</li>
+            <li>Distribution SHAPES</li>
+          </ul>
+        </div>
+        <div class="week">
+          <h3>Week 4</h3>
+          <ul>
+            <li>Weekly Outlook</li>
+            <li>Tape Reading</li>
+            <li>Daily Outlook</li>
+            <li>Intro to Footprint</li>
+            <li>Types of Behavior</li>
+            <li>Footprint Models</li>
+            <li>The Bookmap World (Part 1)</li>
+            <li>Q&A (2 Sessions)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="month june">
+      <h2>June</h2>
+      <div class="weeks-grid">
+        <div class="week">
+          <h3>Week 1</h3>
+          <ul>
+            <li>Models PT1</li>
+            <li>Models PT2</li>
+            <li>Models PT3</li>
+            <li>Models PT4</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Phostrade Academy | All rights reserved
+    </footer>
+  </main>
+</body>
+</html>
