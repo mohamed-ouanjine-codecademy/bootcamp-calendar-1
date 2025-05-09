@@ -394,27 +394,30 @@
       &copy; 2025 Phostrade Academy | All rights reserved
     </footer>
     <script>
-      // Ensure the DOM is fully loaded before executing the script
-      document.addEventListener("DOMContentLoaded", function () {
-        // Adjusted start date to April 7
-        const today = new Date();
-        const aprilStart = new Date('2025-04-07');
-        const daysSinceStart = Math.floor((today - aprilStart) / (1000 * 60 * 60 * 24));
-        const currentWeek = Math.ceil((daysSinceStart + 1) / 7);
-        const weekElems = document.querySelectorAll('.month.april .week');
+      // Auto-highlight the current week based on today's date
+      // Get today’s date
+      const today = new Date();
 
-        // Log values for debugging
-        console.log('Today:', today);
-        console.log('Start Date:', aprilStart);
-        console.log('Days since start:', daysSinceStart);
-        console.log('Calculated current week:', currentWeek);
-        console.log('Total April weeks:', weekElems.length);
+    // Compute zero-based week index:
+    //   days  1– 7 → 0
+    //   days  8–14 → 1
+    //   days 15–21 → 2
+    //   days 22–28 → 3
+    //   days 29–31 → 4 (if you ever add a Week 5)
+    const currentWeekIndex = Math.floor((today.getDate() - 5) / 7);
+    
+    // Find the right month section
+    const currentMonth = today
+      .toLocaleString('default', { month: 'long' })
+      .toLowerCase();
+    const monthSection = document.querySelector(`.month.${currentMonth}`);
 
-        // Highlight the current week if within range
-        if (currentWeek >= 1 && currentWeek <= weekElems.length) {
-          weekElems[currentWeek - 1].classList.add('current');
-        }
-      });
+    if (monthSection) {
+      const weeks = monthSection.querySelectorAll('.week');
+      if (weeks[currentWeekIndex]) {
+        weeks[currentWeekIndex].classList.add('current');
+      }
+    }
     </script>
   </main>
 </body>
